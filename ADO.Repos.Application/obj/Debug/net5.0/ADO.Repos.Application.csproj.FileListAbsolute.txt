@@ -1,0 +1,15 @@
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ADO.Repos.Application.deps.json
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ADO.Repos.Application.dll
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ref/ADO.Repos.Application.dll
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ADO.Repos.Application.pdb
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ADO.Repos.Models.dll
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/bin/Debug/net5.0/ADO.Repos.Models.pdb
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.csproj.AssemblyReference.cache
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.AssemblyInfoInputs.cache
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.AssemblyInfo.cs
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.csproj.CoreCompileInputs.cache
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.csproj.CopyComplete
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.dll
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ref/ADO.Repos.Application.dll
+/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/Debug/net5.0/ADO.Repos.Application.pdb
