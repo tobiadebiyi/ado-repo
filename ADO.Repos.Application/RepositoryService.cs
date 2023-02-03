@@ -3,56 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ADO.Repos.Models;
-using Microsoft.TeamFoundation.SourceControl.WebApi;
-using Microsoft.VisualStudio.Services.Common;
-using Microsoft.VisualStudio.Services.WebApi;
+using Microsoft.Extensions.Options;
 
 namespace ADO.Repos.Application
 {
-  public class RepositoryService : IRepositoryService
-  {
-    const string collectionUri = "https://dev.azure.com/***";
-    const string projectName = "Retro";
-    const string pat = "***";
-    List<string> repoNames = new List<string>{ "Retro" };
-
-    public async Task<IEnumerable<Repository>> GetAll()
+    public class RepositoryService : IRepositoryService
     {
-      var creds = new VssBasicCredential(string.Empty, pat);
+        private readonly AdoConfig _adoOptions;
+        private readonly IAdoExternalService _adoExternalService;
 
-      var connection = new VssConnection(new Uri(collectionUri), creds);
-      using var gitClient = connection.GetClient<GitHttpClient>();
-
-      var repositories = new List<Repository>();
-      foreach(var repoName in repoNames)
-      {
-        var repo = await gitClient.GetRepositoryAsync(projectName, repoName);
-        var branches = await gitClient.GetBranchesAsync(projectName, repo.Id);
-
-        var devBranch = branches.SingleOrDefault(b => b.IsBranch("Ejected"));
-        var mainBranch = branches.SingleOrDefault(b => b.IsBranch("Master"));
-        List<GitCommitRef> mergeMainAndDevBases = null;
-
-        if(devBranch != default && mainBranch != default)
+        public RepositoryService(IOptions<AdoConfig> adoOptions, IAdoExternalService adoExternalService)
         {
-          mergeMainAndDevBases = await gitClient.GetMergeBasesAsync(projectName, repoName, mainBranch.Commit.CommitId, devBranch.Commit.CommitId);
+            _adoOptions = adoOptions?.Value ?? throw new ArgumentNullException(nameof(adoOptions));
+            this._adoExternalService = adoExternalService;
         }
 
-        var repository = new Repository
-                { 
-                  Name = repo.Name, 
-                  Url = repo.RemoteUrl,
-                  Main = mainBranch?.AsBranch(),
-                  Dev = devBranch?.AsBranch(),
-                  Test = branches.SingleOrDefault(b => b.IsBranch(BranchNames.Test))?.AsBranch(),
-                  Master = branches.SingleOrDefault(b => b.IsBranch(BranchNames.Master))?.AsBranch(),
-                  MainIsAheadOfDev = mergeMainAndDevBases?.FirstOrDefault()?.Committer.Date < mainBranch.Commit.Committer.Date
-                };
+        public async Task<Dictionary<string, Repository>> GetAll(Filters filters = null)
+        {
+            var repositories = new Dictionary<string, Repository>();
+            filters ??= _adoOptions.DefaultFilters;
 
-        repositories.Add(repository);
-      }
+            foreach (var repo in _adoOptions.Repositories)
+            {
+                var repository = await _adoExternalService.GetRepository(repo);
 
-      return repositories;
+                repository.TargetBranches = await _adoExternalService.TargetBranches(repository);
+
+                if (filters.HasStaleBranches)
+                    repository.StaleBranches = await _adoExternalService.StaleBranches(repository);
+
+                if (filters.HasBranchesAheadOfDev || filters.MainIsAheadOfDev)
+                    repository.BranchesAheadOfDev = await _adoExternalService.GetBranchesAheadOf(BranchNames.Dev, repository);
+
+                if (repository.MatchesFilter(filters))
+                    repositories.Add(repo.Name, repository);
+            }
+
+            return repositories;
+        }
+
+        public async Task<Repository> Get(Guid repositoryId)
+        {
+            var repoConfig = _adoOptions.Repositories.FirstOrDefault(r => r.Id == repositoryId);
+            var repository = await _adoExternalService.GetRepository(repoConfig);
+            return repository;
+        }
+
+        public Task<IEnumerable<Repository>> GetAll()
+         => _adoExternalService.GetAllRepositories();
     }
-  }
 }

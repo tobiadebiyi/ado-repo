@@ -1,36 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/ADO.Repos.Application.csproj": {}
+    "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Application/ADO.Repos.Application.csproj": {}
   },
   "projects": {
-    "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/ADO.Repos.Application.csproj": {
+    "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Application/ADO.Repos.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/ADO.Repos.Application.csproj",
+        "projectUniqueName": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Application/ADO.Repos.Application.csproj",
         "projectName": "ADO.Repos.Application",
-        "projectPath": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/ADO.Repos.Application.csproj",
-        "packagesPath": "/Users/oluwatobiadebiyi/.nuget/packages/",
-        "outputPath": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Application/obj/",
+        "projectPath": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Application/ADO.Repos.Application.csproj",
+        "packagesPath": "/Users/oadebiyi/.nuget/packages/",
+        "outputPath": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/oluwatobiadebiyi/.nuget/NuGet/NuGet.Config"
+          "/Users/oadebiyi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://pkgs.dev.azure.com/KPMG-KLS/KLP/_packaging/KLP/nuget/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/ADO.Repos.Models.csproj": {
-                "projectPath": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/ADO.Repos.Models.csproj"
+              "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/ADO.Repos.Models.csproj": {
+                "projectPath": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/ADO.Repos.Models.csproj"
               }
             }
           }
@@ -42,20 +39,12 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.TeamFoundationServer.Client": {
+            "Microsoft.Extensions.Options": {
               "target": "Package",
-              "version": "[16.170.0, )"
-            },
-            "Microsoft.TeamFoundationServer.ExtendedClient": {
-              "target": "Package",
-              "version": "[16.170.0, )"
-            },
-            "Microsoft.VisualStudio.Services.Client": {
-              "target": "Package",
-              "version": "[16.170.0, )"
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -64,7 +53,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,34 +63,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/ADO.Repos.Models.csproj": {
+    "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/ADO.Repos.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/ADO.Repos.Models.csproj",
+        "projectUniqueName": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/ADO.Repos.Models.csproj",
         "projectName": "ADO.Repos.Models",
-        "projectPath": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/ADO.Repos.Models.csproj",
-        "packagesPath": "/Users/oluwatobiadebiyi/.nuget/packages/",
-        "outputPath": "/Users/oluwatobiadebiyi/Sources/repos/ADO.Repo/ADO.Repos.Models/obj/",
+        "projectPath": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/ADO.Repos.Models.csproj",
+        "packagesPath": "/Users/oadebiyi/.nuget/packages/",
+        "outputPath": "/Users/oadebiyi/Downloads/code/Roadmap/src/LEAP.Roadmap.ADO.Repos/ADO.Repos.Models/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/oluwatobiadebiyi/.nuget/NuGet/NuGet.Config"
+          "/Users/oadebiyi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://pkgs.dev.azure.com/KPMG-KLS/KLP/_packaging/KLP/nuget/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -111,15 +98,26 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "KLP.Core": {
+              "target": "Package",
+              "version": "[8.4.0.3, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -128,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     }

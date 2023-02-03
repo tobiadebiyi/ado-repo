@@ -2,9 +2,9 @@ namespace ADO.Repos.Models
 {
     public static class BranchNames
     {
-        public const string Main = nameof(Main);
-        public const string Dev = nameof(Dev);
-        public const string Test = nameof(Test);
-        public const string Master = nameof(Master);
+        public const string Main = "main";
+        public const string Dev = "dev";
+        public const string Test = "test";
+        public const string Master = "master";
     }
 }

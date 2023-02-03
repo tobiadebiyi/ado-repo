@@ -13,7 +13,17 @@ namespace ADO.Repos.Web
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddEnvironmentVariables();
+                if (hostingContext.HostingEnvironment.IsDevelopment())
+                {
+                    config.AddJsonFile("local.appsettings.json", optional: false, reloadOnChange: false);
+                }
+            })
+            .Build()
+            .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

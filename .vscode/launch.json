@@ -9,7 +9,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/ADO.Repos.Web/bin/Debug/net5.0/ADO.Repos.Web.dll",
+      "program": "${workspaceFolder}/ADO.Repos.Web/bin/Debug/net6.0/ADO.Repos.Web.dll",
       "args": [],
       "cwd": "${workspaceFolder}/ADO.Repos.Web",
       "stopAtEntry": false,

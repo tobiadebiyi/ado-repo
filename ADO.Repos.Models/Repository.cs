@@ -1,15 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ADO.Repos.Models
 {
     public class Repository
     {
-        public string Url {get; set; }
-        public string Name { get; set; }    
-        public bool MainIsAheadOfDev { get; set; }
-        public Branch Main { get; set; }
-        public Branch Dev { get; set; }
-        public Branch Test { get; set; }
-        public Branch Master { get; set; }
+        public Repository(Guid id, string name, Uri url)
+        {
+            Id = id;
+            Name = name;
+            Url = url;
+        }
+
+        public Guid Id { get; }
+
+        public Uri Url { get; }
+
+        public string Name { get; }
+
+        public IEnumerable<Branch> TargetBranches { get; set; } = new List<Branch>();
+
+        public IEnumerable<Branch> StaleBranches { get; set; } = new List<Branch>();
+
+        public IEnumerable<Branch> BranchesAheadOfDev { get; set; } = new List<Branch>();
+
+        public bool MainIsAheadOfDev
+            => BranchesAheadOfDev.Any(b => string.Equals(b.Name, BranchNames.Main, StringComparison.InvariantCultureIgnoreCase));
+
+        public bool MatchesFilter(Filters filters)
+        {
+            if (filters.HasBranchesAheadOfDev && !BranchesAheadOfDev.Any())
+                return false;
+
+            if (filters.HasStaleBranches && !StaleBranches.Any())
+                return false;
+
+            if (filters.MainIsAheadOfDev && !MainIsAheadOfDev)
+                return false;
+
+            return true;
+        }
     }
 }
